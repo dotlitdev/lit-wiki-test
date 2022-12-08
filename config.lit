@@ -1,0 +1,68 @@
+# Config
+
+
+
+## Table of Contents
+
+## Settings
+### GitHub 
+
+Set up a GitHub repository to save your updates to. Just run the *Cell* below. *Requires a [GitHub Access Token](https://github.com/settings/tokens)*.
+
+
+
+```js #connect #github !collapse > md
+const settings = {
+    username: "dotlitdev",
+    repository: "dotlit-starter",
+    branch: "main",
+    prefix: "",
+};
+
+return (async (fn) => {
+  if (typeof localStorage === "undefined") return "No localStorage available.";
+
+  const __key = "ghSettings";
+  const display = fn => {
+      const redacted = Object.assign({token:'••••••••••'}, settings, {})
+      return ("`"+lit.utils.inspect(redacted)+"`")
+             .split('\n')
+             .map(l=>'> '+l)
+             .join('\n');
+  }
+
+  const current = localStorage.getItem(__key);
+  let token
+  if (current) {
+    let data = JSON.parse(current);
+    if (data && data.token && confirm("Continue using existing token?")) token = data.token
+  }
+
+  token = token || prompt(
+    `Enter a GitHub Access Token for:\n Repository: ${settings.username}/${settings.repository}`
+  );
+
+  if (token) {
+    localStorage.setItem(__key, JSON.stringify({ ...settings, token }));
+    return "All set up.\n\n" + display();
+  }
+
+  return "No **token** provided. Not set up.\n\n" + display();
+})();
+
+```
+```>md attached=true updated=1622292092907
+All set up.
+
+> `{ token: '••••••••••',
+>   username: 'dotlitdev',
+>   repository: 'dotlit-starter',
+>   branch: 'main',
+>   prefix: '' }`
+```
+
+## Custom plugins
+
+```>md !info
+ℹ️ Move, copy or *transclude* any document specific `!plugin` here to have it apply to all documents in this `.lit` notebook.
+```

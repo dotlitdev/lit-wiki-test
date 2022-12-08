@@ -1,0 +1,19 @@
+# 🌱 Welcome
+
+To *your* `.lit` Digital Garden. Just start editing this page, all changes are stored locally, until/unless you configure it to write to GitHub, see [config#github](config.lit#github).
+
+
+```js > md
+return (async args => {
+
+  const {default: confetti} = await 
+  import('https://cdn.skypack.dev/canvas-confetti')
+
+  confetti()
+  return "*Wait for it...* 🥳"
+})()
+```
+```>md attached=true updated=1622071533370
+*Wait for it...* 🥳
+```
+
