@@ -1,0 +1,85 @@
+{
+    "meta": {
+        "totalSourceFiles": 3,
+        "totalUsableSourceFiles": 3,
+        "failures": {
+            "config.lit": [
+                "genBackLinks2: Cannot read property 'relative' of undefined"
+            ]
+        }
+    },
+    "nodes": [
+        {
+            "id": "/config.lit",
+            "backlinks": [
+                {
+                    "id": "/index.lit",
+                    "url": "../../../../../index.html",
+                    "title": "🌱 Welcome"
+                }
+            ],
+            "url": "../../../../../config.html",
+            "exists": true,
+            "title": "Config",
+            "links": 4,
+            "size": 1638
+        },
+        {
+            "id": "/index.lit",
+            "backlinks": [],
+            "url": "../../../../../index.html",
+            "exists": true,
+            "title": "🌱 Welcome",
+            "links": 1,
+            "size": 448
+        },
+        {
+            "id": "/README.md",
+            "backlinks": [],
+            "url": "../../../../../README.html",
+            "exists": true,
+            "title": "dotlit-starter",
+            "links": 2,
+            "size": 321
+        },
+        {
+            "id": "/actions/workflows/deploy.yml",
+            "backlinks": [
+                {
+                    "id": "/README.md",
+                    "url": "../../../../../README.html",
+                    "title": "dotlit-starter"
+                }
+            ],
+            "url": "../../actions/workflows/deploy.yml",
+            "exists": false,
+            "type": "link"
+        },
+        {
+            "id": "https://dotlit.github.io/dotlit-starter",
+            "backlinks": [
+                {
+                    "id": "/README.md",
+                    "url": "../../../../../README.html",
+                    "title": "dotlit-starter"
+                }
+            ],
+            "url": "https://dotlit.github.io/dotlit-starter",
+            "type": "external"
+        }
+    ],
+    "links": [
+        {
+            "source": "/index.lit",
+            "target": "/config.lit"
+        },
+        {
+            "source": "/README.md",
+            "target": "/actions/workflows/deploy.yml"
+        },
+        {
+            "source": "/README.md",
+            "target": "https://dotlit.github.io/dotlit-starter"
+        }
+    ]
+}
